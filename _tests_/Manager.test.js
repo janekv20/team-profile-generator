@@ -11,29 +11,29 @@ test('creates a manager object', () => {
 test('gets manager name', () => {
     const manager = new Manager('Jane Doe', 1, 'jane.h.vo@gmail.com', '12345');
 
-    expect(manager.getName()).toHaveProperty('name');
+    expect(manager.getName()).toEqual(expect.any(String));
 })
 //get id
 test('gets manager id', () => {
     const manager = new Manager('Jane Doe', 1, 'jane.h.vo@gmail.com', '12345');
 
-    expect(manager.getId()).toHaveProperty('id');
+    expect(manager.getId()).toEqual(expect.any(Number));
 })
 //get email
 test('gets manager email', () => {
     const manager = new Manager('Jane Doe', 1, 'jane.h.vo@gmail.com', '12345');
 
-    expect(manager.getEmail()).toHaveProperty('email');
+    expect(manager.getEmail()).toEqual(expect.any(String));
 })
 //get role
 test('gets manager role', () => {
     const manager = new Manager('Jane Doe', 1, 'jane.h.vo@gmail.com', '12345');
 
-    expect(manager.getRole()).toHaveProperty('role');
+    expect(manager.getRole()).toEqual(expect.any(String));
 })
 //get office number
 test('get manager office number', () => {
     const manager = new Manager('Jane Doe', 1, 'jane.h.vo@gmail.com', '12345');
 
-    expect(manager.getOfficenumber()).toHaveProperty('office');
+    expect(manager.getOfficenumber()).toEqual(expect.any(Number));
 });

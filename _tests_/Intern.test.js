@@ -11,29 +11,29 @@ test('creates an intern object', () => {
 test('gets intern name', () => {
     const intern = new Intern('Jane Doe', 6789, 'jane.vo@utexas.edu', 'UT Austin');
 
-    expect(intern.getName()).toHaveProperty('name');
+    expect(intern.getName()).toEqual(expect.any(String));
 })
 //get id
 test('gets intern id', () => {
     const intern = new Intern('Jane Doe', 6789, 'jane.vo@utexas.edu', 'UT Austin');
 
-    expect(intern.getId()).toHaveProperty('id');
+    expect(intern.getId()).toEqual(expect.any(Number));
 })
 //get email
 test('gets intern email', () => {
     const intern = new Intern('Jane Doe', 6789, 'jane.vo@utexas.edu', 'UT Austin');
 
-    expect(intern.getEmail()).toHaveProperty('email');
+    expect(intern.getEmail()).toEqual(expect.any(String));
 })
 //get role
 test('gets intern role', () => {
     const intern = new Intern('Jane Doe', 6789, 'jane.vo@utexas.edu', 'UT Austin');
 
-    expect(intern.getRole()).toHaveProperty('role');
+    expect(intern.getRole()).toEqual(expect.any(String));
 })
 //get school
 test('get intern school', () => {
     const intern = new Intern('Jane Doe', 6789, 'jane.vo@utexas.edu', 'UT Austin');
 
-    expect(intern.getSchool()).toHaveProperty('school');
+    expect(intern.getSchool()).toEqual(expect.any(String));
 });

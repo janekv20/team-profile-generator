@@ -12,29 +12,29 @@ test('creates an engineer object', () => {
 test('gets engineer name', () => {
     const engineer = new Engineer('Jane', 12345, 'jane.h.vo@gmail.com', 'janekv20');
 
-    expect(engineer.getName()).toHaveProperty('name');
+    expect(engineer.getName()).toEqual(expect.any(String));
 })
 //get id
 test('gets engineer id', () => {
     const engineer = new Engineer('Jane', 12345, 'jane.h.vo@gmail.com', 'janekv20');
 
-    expect(engineer.getId()).toHaveProperty('id');
+    expect(engineer.getId()).toEqual(expect.any(Number));
 })
 //get email
 test('gets engineer email', () => {
     const engineer = new Engineer('Jane', 12345, 'jane.h.vo@gmail.com', 'janekv20');
 
-    expect(engineer.getEmail()).toHaveProperty('email');
+    expect(engineer.getEmail()).toEqual(expect.any(String));
 })
 //get role
 test('gets engineer role', () => {
     const engineer = new Engineer('Jane', 12345, 'jane.h.vo@gmail.com', 'janekv20');
 
-    expect(engineer.getRole()).toHaveProperty('role');
+    expect(engineer.getRole()).toEqual(expect.any(String));
 })
 //get github
 test('get engineer github', () => {
     const engineer = new Engineer('Jane', 12345, 'jane.h.vo@gmail.com', 'janekv20');
 
-    expect(engineer.getGithub()).toHaveProperty('github');
+    expect(engineer.getGithub()).toEqual(expect.any(String));
 });
