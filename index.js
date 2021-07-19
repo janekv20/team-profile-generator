@@ -144,7 +144,7 @@ function writeToFile(team, data) {
 
 //Create a function to initialize app
 const init = () => {
-    return inquirer.prompt(questions)
+    return inquirer.prompt()
         .then(data => {
             return data;
         })
