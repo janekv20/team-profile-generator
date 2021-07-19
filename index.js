@@ -1,3 +1,6 @@
+console.log('I am running!')
+
+const { template } = require('@babel/core');
 //node modules
 const fs = require('fs');
 const inquirer = require('inquirer');
@@ -8,7 +11,7 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
 //team array
-const team = [];
+const teamArray = [];
 // function to add employee name, id, email, role and role specific questions
 function addEmployee() {
     inquirer.prompt([{
@@ -121,12 +124,45 @@ function addEmployee() {
                     } else {
                         newEmployee = new Manager(name, id, email, roleData);
                     }
-                    team.push(newEmployee);
-                    if (moreEmployees) {
+                    teamArray.push(newEmployee);
+                    if (moreEmployees === 'yes') {
                         return addEmployee(team);
                     } else {
-                        return team;
+                        return teamArray;
                     }
                 })
         })
 };
+//function to write Team profile 
+function writeToFile(team, data) {
+    fs.writeFile('./dist/index.html', team, data, (err) => {
+        if (err)
+            throw (err);
+        console.log('Your team profile has been succesfully created! Please review the index.html')
+    });
+};
+
+//Create a function to initialize app
+const init = () => {
+    return inquirer.prompt(questions)
+        .then(data => {
+            return data;
+        })
+}
+
+//Function call to initialize app
+
+init()
+    .then(data => {
+        console.log(data);
+        return pageTemplate(data);
+    })
+    .then(page => {
+        return writeToFile(page);
+    })
+    .then(writerFileResponse => {
+        console.log(writerFileResponse.message);
+    })
+    .catch(err => {
+        console.log(err);
+    })
